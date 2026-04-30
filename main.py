@@ -2,7 +2,7 @@ from modulos import utils
 from time import sleep
 while True:
     utils.menu('Registrar Corrida','Listar corridas', 'Buscar corrida', 'Resumo financeiro', 'Configurações do veículo', 'Remover corrida', 'Sair' )
-    resp = int(input('Digite a opção desejada'))
+    resp = utils.selecionarOpção('Digite a opção desejada')
     if resp == 1:
         utils.registrarCorrida()
 
@@ -10,7 +10,7 @@ while True:
         utils.visualizarCorridas()
 
     elif resp == 3:
-        print('op3')
+        utils.buscarCorridas()
 
     elif resp == 4:
         print('op4')
