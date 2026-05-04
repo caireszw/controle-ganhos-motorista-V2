@@ -1,7 +1,8 @@
 from modulos import utils
+from modulos import calculos
 from time import sleep
 while True:
-    utils.menu('Registrar Corrida','Listar corridas', 'Buscar corrida', 'Resumo financeiro', 'Configurações do veículo', 'Remover corrida', 'Sair' )
+    utils.menu('Registrar Corrida','Lista de corridas', 'Buscar corrida', 'Resumo financeiro', 'Configurações motorista', 'Remover corrida', 'Sair' )
     resp = utils.selecionarOpção('Digite a opção desejada')
     if resp == 1:
         utils.registrarCorrida()
@@ -13,18 +14,18 @@ while True:
         utils.buscarCorridas()
 
     elif resp == 4:
-        print('op4')
+        calculos.contabilidadeDinheiro()
     
     elif resp == 5:
-     print('op5')
+        calculos.configuraçõesMotorista()
 
     elif resp == 6:
-     print('op6')
+        utils.removerCorrida()
 
     elif resp == 7:
-        print('op7')  
+        print('FIM DO PROGRAMA MUITO OBRIGADO!')  
         break
     else:
        print('OPÇÃO INVALIDA')
-    sleep(0.5)
+    sleep(1)
    

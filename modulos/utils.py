@@ -1,3 +1,4 @@
+
 def lin():
     print('-'*30)
 
@@ -33,8 +34,8 @@ def registrarCorrida():
         arq = open('dados/corridas.txt', 'at')
         data = input('Digite o dia: ')
         app = input('Digite o app: ')
-        valor = input('Digite o valor: ')
-        km = input('Digite a Km percorrida: ')
+        valor = input('Digite o valor: ').replace(',','.')
+        km = input('Digite a Km percorrida: ').replace(',','.')
         linha = f'{data};{app};{valor};{km}\n'
         arq.write(linha)
         arq.close()
@@ -62,7 +63,23 @@ def buscarCorridas():
         dados = d.strip().split(';')
         if resp in dados:
             print(f'Data {dados[0]} | Plataforma {dados[1]} | Valor: R$ {dados[2]} | KM: {dados[3]}')
-        # else:
-        #     print(f'Nenhuma corrida encotrada na data de {resp}')
+    if resp not in dados:
+        print(f'Nenhuma corrida encotrada na data de {resp}')
 
     arq.close()
+
+def removerCorrida():
+    # preciso remover algo do corridas.txt
+    print(visualizarCorridas())
+    print('Digite os dados da corrida que deseja remover:')
+    data = input('Digite a data')
+    plataforma =  input('Digite a plataforma: ')
+    valor = input('Digite o valor: ')
+    km = input('Digite a km:')
+    dados = f'{data};{plataforma};{valor};{km}'
+    # faz uma analise pra ver se precisa split e strip pra comparar
+    # dps faz um 
+    # if dados in tal tal tal:
+    #     removerCorrida
+    # else: 
+    #     nao existe essa corrida 
