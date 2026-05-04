@@ -8,8 +8,8 @@ def contabilidadeDinheiro():
     somakm = 0 
     for v in conteudo:
         dados = v.strip().split(';')
-        somaganhos += float(dados[3]) 
-        somakm += float(dados[4]) 
+        somaganhos += float(dados[2].replace(',','.')) 
+        somakm += float(dados[3].replace(',','.')) 
     arq.close()
 
     arq2 = open('dados/motorista.txt', 'r')
@@ -18,8 +18,8 @@ def contabilidadeDinheiro():
     preçocombustivel = 0 
     for v in conteudo2:
         dados = v.strip().split(';') 
-        preçocombustivel += float(dados[2]).replace(',','.')
-        mediaconsumo += float(dados[1]).replace(',','.')
+        preçocombustivel += float(dados[2].replace(',','.'))
+        mediaconsumo += float(dados[1].replace(',','.'))
     arq2.close()
     litros = somakm/mediaconsumo
     valorgasto = litros * preçocombustivel
@@ -31,8 +31,8 @@ def contabilidadeDinheiro():
 
 def configuraçõesMotorista():
     veiculo = input('Digite o modelo do seu carro: ')
-    media = input('Digite a media de consumo do veiculo: ')
-    preço = input('Digite o valor atual da gasolina: ')
+    media = input('Digite a media de consumo do veiculo: ').replace(',','.')
+    preço = input('Digite o valor atual da gasolina: ').replace(',','.')
     arq = open('dados/motorista.txt', 'w')
     linha = f'{veiculo};{media};{preço}'
     arq.write(linha)

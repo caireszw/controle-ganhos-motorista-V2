@@ -1,7 +1,51 @@
-# controle-ganhos-motorista
-Sistema em Python para controle de ganhos de motoristas de aplicativo, com registro de corridas, cálculo de despesas e lucro estimado.
-Este projeto é um sistema desenvolvido em Python para auxiliar motoristas de aplicativo no controle de ganhos diários.
+#  Controle de Ganhos - Motorista
 
-O sistema permite registrar corridas, calcular o total recebido, estimar gastos com combustível e gerar uma visão simples do lucro.
+Sistema simples em Python para controle de corridas e cálculo de ganhos de um motorista de aplicativo.
 
-O objetivo do projeto é aplicar conceitos de lógica de programação, estruturas de dados e organização de código.
+## Funcionalidades
+
+- Registrar corridas (data, aplicativo, valor e km)
+- Listar todas as corridas
+- Buscar corridas por data
+- Calcular resumo financeiro:
+  - Total ganho
+  - Total de km rodados
+  - Gasto com combustível
+  - Lucro final
+- Configurar dados do motorista (veículo, consumo e preço do combustível)
+
+## Tecnologias utilizadas
+
+- Python 3
+- Manipulação de arquivos `.txt`
+
+## Estrutura do projeto
+ projeto
+│
+├── main.py
+├── modulos/
+│ ├── utils.py
+│ ├── calculos.py
+│
+├── dados/
+│ ├── corridas.txt
+│ ├── motorista.txt
+## Como usar
+
+Ao iniciar o programa, será exibido um menu com opções:
+
+- Registrar corrida
+- Visualizar corridas
+- Buscar corrida
+- Ver resumo financeiro
+- Configurar motorista
+- Sair
+
+Basta digitar o número da opção desejada.
+
+## Observações
+
+- Os dados são armazenados em arquivos `.txt`
+- Use ponto (`.`) ou vírgula (`,`) para valores decimais
+- O sistema é simples e voltado para aprendizado
+
